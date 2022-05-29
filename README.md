@@ -1,2 +1,2 @@
 # krakensdr_docs
-Documentation and Wiki for KrakenSDR
+Documentation, Supporting Files and Wiki for KrakenSDR
