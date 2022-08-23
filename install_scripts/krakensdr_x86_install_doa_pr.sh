@@ -30,16 +30,17 @@ chmod ug+x Miniforge3-Linux-x86_64.sh
 ./Miniforge3-Linux-x86_64.sh -b
 
 export PATH=/home/krakenrf/miniforge3/bin/:$PATH
-/home/krakenrf/miniforge3/bin/conda config --set auto_activate_base false
+conda init
+conda config --set auto_activate_base false
 
 conda create -n kraken python=3.9.7
 conda activate kraken
 
-conda install scipy
-conda install numba
-conda install configparser
-conda install pyzmq
-conda install scikit-rf 
+conda install -y scipy
+conda install -y numba
+conda install -y configparser
+conda install -y pyzmq
+conda install -y scikit-rf con
 
 cd
 mkdir krakensdr_doa
@@ -51,11 +52,11 @@ cd heimdall_daq_fw
 cd ~/krakensdr_doa/heimdall_daq_fw/Firmware/_daq_core/
 make
 
-conda install quart
-conda install pandas
-conda install orjson
-conda install matplotlib
-conda install requests
+conda install -y quart
+conda install -y pandas
+conda install -y orjson
+conda install -y matplotlib
+conda install -y requests
 
 pip3 install dash_bootstrap_components==1.1.0
 pip3 install quart_compress
