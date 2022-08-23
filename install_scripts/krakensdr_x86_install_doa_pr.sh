@@ -12,6 +12,7 @@ sudo ldconfig
 
 echo 'blacklist dvb_usb_rtl28xxu' | sudo tee --append /etc/modprobe.d/blacklist-dvb_usb_rtl28xxu.conf
 
+cd
 git clone https://github.com/krakenrf/kfr
 cd kfr
 mkdir build
@@ -33,14 +34,14 @@ export PATH=/home/krakenrf/miniforge3/bin/:$PATH
 conda init
 conda config --set auto_activate_base false
 
-conda create -n kraken python=3.9.7
+conda create -y -n kraken python=3.9.7
 conda activate kraken
 
 conda install -y scipy
 conda install -y numba
 conda install -y configparser
 conda install -y pyzmq
-conda install -y scikit-rf con
+conda install -y scikit-rf
 
 cd
 mkdir krakensdr_doa
@@ -66,7 +67,7 @@ pip3 install pyargus
 conda install -y dash==1.20.0
 conda install -y werkzeug==2.0.2
 
-pip3 install gpsd-py3
+cd 
 
 cd ~/krakensdr_doa
 git clone https://github.com/krakenrf/krakensdr_doa
