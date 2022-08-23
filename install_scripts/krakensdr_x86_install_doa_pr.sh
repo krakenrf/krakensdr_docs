@@ -1,5 +1,5 @@
 sudo apt update
-sudo apt -y install build-essential git cmake libusb-1.0-0-dev lsof libzmq3-dev
+sudo apt -y install build-essential git cmake libusb-1.0-0-dev lsof libzmq3-dev clang
 
 git clone https://github.com/krakenrf/librtlsdr
 cd librtlsdr
@@ -12,8 +12,6 @@ sudo ldconfig
 
 echo 'blacklist dvb_usb_rtl28xxu' | sudo tee --append /etc/modprobe.d/blacklist-dvb_usb_rtl28xxu.conf
 
-
-sudo apt-get install clang
 
 git clone https://github.com/krakenrf/kfr
 cd kfr
