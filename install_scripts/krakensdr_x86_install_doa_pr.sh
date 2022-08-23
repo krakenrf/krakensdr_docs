@@ -1,5 +1,5 @@
 sudo apt update
-sudo apt install build-essential git cmake libusb-1.0-0-dev lsof libzmq3-dev
+sudo apt -y install build-essential git cmake libusb-1.0-0-dev lsof libzmq3-dev
 
 git clone https://github.com/krakenrf/librtlsdr
 cd librtlsdr
@@ -30,6 +30,4 @@ sudo ldconfig
 cd
 wget https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-x86_64.sh
 chmod ug+x Miniforge3-Linux-x86_64.sh
-./Miniforge3-Linux-x86_64.sh
-
-
+./Miniforge3-Linux-x86_64.sh -b
