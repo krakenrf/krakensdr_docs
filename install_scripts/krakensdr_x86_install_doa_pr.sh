@@ -89,3 +89,5 @@ git clone https://github.com/krakenrf/krakensdr_pr
 cp krakensdr_pr/util/kraken_pr_start.sh .
 cp krakensdr_pr/util/kraken_pr_stop.sh .
 cp heimdall_daq_fw/config_files/pr_2ch_2pow21/daq_chain_config.ini heimdall_daq_fw/Firmware/daq_chain_config.ini
+
+sudo reboot
