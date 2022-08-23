@@ -76,7 +76,7 @@ git clone https://github.com/krakenrf/krakensdr_doa
 cp krakensdr_doa/util/kraken_doa_start.sh .
 cp krakensdr_doa/util/kraken_doa_stop.sh .
 
-sudo apt install libfftw3-3 libfftw3-dev
+sudo apt -y install libfftw3-3 libfftw3-dev
 pip3 install pyapril
 pip3 install cython
 pip3 install pyfftw
