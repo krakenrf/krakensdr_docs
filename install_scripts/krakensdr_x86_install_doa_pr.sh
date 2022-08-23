@@ -1,3 +1,4 @@
+#!/bin/bash
 sudo apt update
 sudo apt -y install build-essential git cmake libusb-1.0-0-dev lsof libzmq3-dev clang php-cli nodejs gpsd
 
@@ -31,7 +32,8 @@ chmod ug+x Miniforge3-Linux-x86_64.sh
 ./Miniforge3-Linux-x86_64.sh -b
 
 export PATH=/home/krakenrf/miniforge3/bin/:$PATH
-conda init
+eval "$(conda shell.bash hook)"
+conda init bash
 conda config --set auto_activate_base false
 
 conda create -y -n kraken python=3.9.7
