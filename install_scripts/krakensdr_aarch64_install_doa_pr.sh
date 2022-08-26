@@ -13,6 +13,7 @@ sudo ldconfig
 
 echo 'blacklist dvb_usb_rtl28xxu' | sudo tee --append /etc/modprobe.d/blacklist-dvb_usb_rtl28xxu.conf
 
+cd
 git clone https://github.com/krakenrf/Ne10
 cd Ne10
 mkdir build
