@@ -55,15 +55,15 @@ cd heimdall_daq_fw
 cd ~/krakensdr_doa/heimdall_daq_fw/Firmware/_daq_core/
 make
 
-conda install -y quart
 conda install -y pandas
 conda install -y orjson
 conda install -y matplotlib
 conda install -y requests
 
 pip3 install dash_bootstrap_components==1.1.0
-pip3 install quart_compress
-pip3 install dash_devices
+pip3 install quart_compress==0.21.0
+pip3 install quart==0.17.0
+pip3 install dash_devices==0.1.3
 pip3 install pyargus
 
 conda install -y dash==1.20.0
