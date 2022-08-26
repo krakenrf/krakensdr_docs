@@ -31,7 +31,7 @@ wget https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge
 chmod ug+x Miniforge3-Linux-x86_64.sh
 ./Miniforge3-Linux-x86_64.sh -b
 
-export PATH=/home/krakenrf/miniforge3/bin/:$PATH
+export PATH=~/miniforge3/bin/:$PATH
 eval "$(conda shell.bash hook)"
 conda init bash
 conda config --set auto_activate_base false
@@ -84,7 +84,7 @@ pip3 install pyfftw
 cd
 mkdir krakensdr_pr
 cd krakensdr_pr
-cp -r /home/krakenrf/krakensdr_doa/heimdall_daq_fw .
+cp -r ~/krakensdr_doa/heimdall_daq_fw .
 git clone https://github.com/krakenrf/krakensdr_pr
 cp krakensdr_pr/util/kraken_pr_start.sh .
 cp krakensdr_pr/util/kraken_pr_stop.sh .
