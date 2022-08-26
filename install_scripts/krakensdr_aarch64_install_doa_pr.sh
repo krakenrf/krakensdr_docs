@@ -1,6 +1,6 @@
 #!/bin/bash
 sudo apt update
-sudo apt -y install build-essential git cmake libusb-1.0-0-dev lsof libzmq3-dev clang php-cli nodejs gpsd
+sudo apt -y install build-essential git cmake libusb-1.0-0-dev lsof libzmq3-dev clang php-cli nodejs gpsd libfftw3-3 libfftw3-dev
 
 git clone https://github.com/krakenrf/librtlsdr
 cd librtlsdr
@@ -72,7 +72,6 @@ git clone https://github.com/krakenrf/krakensdr_doa
 cp krakensdr_doa/util/kraken_doa_start.sh .
 cp krakensdr_doa/util/kraken_doa_stop.sh .
 
-sudo apt -y install libfftw3-3 libfftw3-dev
 pip3 install pyapril
 pip3 install cython
 pip3 install pyfftw
@@ -85,5 +84,3 @@ git clone https://github.com/krakenrf/krakensdr_pr
 cp krakensdr_pr/util/kraken_pr_start.sh .
 cp krakensdr_pr/util/kraken_pr_stop.sh .
 cp heimdall_daq_fw/config_files/pr_2ch_2pow21/daq_chain_config.ini heimdall_daq_fw/Firmware/daq_chain_config.ini
-
-sudo reboot
