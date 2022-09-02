@@ -2,6 +2,10 @@
 sudo apt update
 sudo apt -y install build-essential git cmake libusb-1.0-0-dev lsof libzmq3-dev clang php-cli nodejs gpsd libfftw3-3 libfftw3-dev
 
+# Remove any old librtlsdr installs (NOTE: this could break other RTL-SDR programs if they were relying on a specific driver branch)
+sudo apt purge librtlsdr*
+sudo rm -rvf /usr/lib/librtlsdr* /usr/include/rtl-sdr* /usr/local/lib/librtlsdr* /usr/local/include/rtl-sdr*
+
 git clone https://github.com/krakenrf/librtlsdr
 cd librtlsdr
 mkdir build
