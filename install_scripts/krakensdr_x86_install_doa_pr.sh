@@ -51,7 +51,6 @@ cd krakensdr_doa
 
 git clone https://github.com/krakenrf/heimdall_daq_fw
 cd heimdall_daq_fw
-git checkout install_script_test
 
 cd ~/krakensdr_doa/heimdall_daq_fw/Firmware/_daq_core/
 cp ~/librtlsdr/build/src/librtlsdr.a .
