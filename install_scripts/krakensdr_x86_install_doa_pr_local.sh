@@ -2,10 +2,6 @@
 sudo apt update
 sudo apt -y install build-essential git cmake libusb-1.0-0-dev lsof libzmq3-dev clang php-cli nodejs gpsd libfftw3-3 libfftw3-dev
 
-# Remove any old librtlsdr installs (NOTE: this could break other RTL-SDR programs if they were relying on a specific driver branch)
-#sudo apt purge librtlsdr*
-#sudo rm -rvf /usr/lib/librtlsdr* /usr/include/rtl-sdr* /usr/local/lib/librtlsdr* /usr/local/include/rtl-sdr*
-
 git clone https://github.com/krakenrf/librtlsdr
 cd librtlsdr
 sudo cp rtl-sdr.rules /etc/udev/rules.d/rtl-sdr.rules
@@ -16,9 +12,6 @@ make
 sudo ln -s ~/librtlsdr/build/src/rtl_test /usr/local/bin/kraken_test
 
 echo 'blacklist dvb_usb_rtl28xxu' | sudo tee --append /etc/modprobe.d/blacklist-dvb_usb_rtl28xxu.conf
-
-#sudo make install
-#sudo ldconfig
 
 cd
 git clone https://github.com/krakenrf/kfr
@@ -79,6 +72,9 @@ pip3 install pyargus
 
 conda install -y dash==1.20.0
 conda install -y werkzeug==2.0.2
+
+conda install "blas=*=mkl"
+conda install -c numba icc_rt
 
 cd 
 
