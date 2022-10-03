@@ -6,8 +6,6 @@ sudo apt -y install build-essential git cmake libusb-1.0-0-dev lsof libzmq3-dev 
 #sudo apt purge librtlsdr*
 #sudo rm -rvf /usr/lib/librtlsdr* /usr/include/rtl-sdr* /usr/local/lib/librtlsdr* /usr/local/include/rtl-sdr*
 
-echo 'blacklist dvb_usb_rtl28xxu' | sudo tee --append /etc/modprobe.d/blacklist-dvb_usb_rtl28xxu.conf
-
 git clone https://github.com/krakenrf/librtlsdr
 cd librtlsdr
 sudo cp rtl-sdr.rules /etc/udev/rules.d/rtl-sdr.rules
@@ -15,7 +13,9 @@ mkdir build
 cd build
 cmake ../ -DINSTALL_UDEV_RULES=ON
 make
-ln -s src/rtl_test /etc/local/bin/kraken_test
+sudo ln -s src/rtl_test /etc/local/bin/kraken_test
+
+echo 'blacklist dvb_usb_rtl28xxu' | sudo tee --append /etc/modprobe.d/blacklist-dvb_usb_rtl28xxu.conf
 
 #sudo make install
 #sudo ldconfig
