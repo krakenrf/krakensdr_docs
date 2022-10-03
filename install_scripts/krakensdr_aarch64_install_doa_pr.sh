@@ -2,18 +2,14 @@
 sudo apt update
 sudo apt -y install build-essential git cmake libusb-1.0-0-dev lsof libzmq3-dev clang php-cli nodejs gpsd libfftw3-3 libfftw3-dev
 
-# Remove any old librtlsdr installs (NOTE: this could break other RTL-SDR programs if they were relying on a specific driver branch)
-sudo apt purge librtlsdr*
-sudo rm -rvf /usr/lib/librtlsdr* /usr/include/rtl-sdr* /usr/local/lib/librtlsdr* /usr/local/include/rtl-sdr*
-
 git clone https://github.com/krakenrf/librtlsdr
 cd librtlsdr
+sudo cp rtl-sdr.rules /etc/udev/rules.d/rtl-sdr.rules
 mkdir build
 cd build
 cmake ../ -DINSTALL_UDEV_RULES=ON
 make
-sudo make install
-sudo ldconfig
+sudo ln -s ~/librtlsdr/build/src/rtl_test /usr/local/bin/kraken_test
 
 echo 'blacklist dvb_usb_rtl28xxu' | sudo tee --append /etc/modprobe.d/blacklist-dvb_usb_rtl28xxu.conf
 
@@ -50,9 +46,13 @@ cd krakensdr_doa
 
 git clone https://github.com/krakenrf/heimdall_daq_fw
 cd heimdall_daq_fw
+git checkout install_script_test
 
 cd ~/krakensdr_doa/heimdall_daq_fw/Firmware/_daq_core/
 cp ~/Ne10/build/modules/libNE10.a .
+cp ~/librtlsdr/build/src/librtlsdr.a .
+cp ~/librtlsdr/include/rtl-sdr.h .
+cp ~/librtlsdr/include/rtl-sdr_export.h .
 make
 
 conda install -y pandas
@@ -69,8 +69,7 @@ pip3 install pyargus
 conda install -y dash==1.20.0
 conda install -y werkzeug==2.0.2
 
-cd 
-
+cd
 cd ~/krakensdr_doa
 git clone https://github.com/krakenrf/krakensdr_doa
 cp krakensdr_doa/util/kraken_doa_start.sh .
