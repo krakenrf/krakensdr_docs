@@ -13,7 +13,7 @@ mkdir build
 cd build
 cmake ../ -DINSTALL_UDEV_RULES=ON
 make
-sudo ln -s src/rtl_test /etc/local/bin/kraken_test
+sudo ln -s src/rtl_test /usr/local/bin/kraken_test
 
 echo 'blacklist dvb_usb_rtl28xxu' | sudo tee --append /etc/modprobe.d/blacklist-dvb_usb_rtl28xxu.conf
 
