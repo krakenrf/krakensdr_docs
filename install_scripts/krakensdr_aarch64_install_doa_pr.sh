@@ -64,6 +64,7 @@ pip3 install quart_compress==0.2.1
 pip3 install quart==0.17.0
 pip3 install dash_devices==0.1.3
 pip3 install pyargus
+pip3 install gpsd-py3
 
 conda install -y dash==1.20.0
 conda install -y werkzeug==2.0.2
