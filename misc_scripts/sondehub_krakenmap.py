@@ -7,7 +7,7 @@
 import sondehub
 import requests
 
-API_SERVER = 'https://map.krakenrf.com:8842'
+API_SERVER = 'https://map.krakenrf.com:443'
 
 login = {'username': 'username', 'password': 'password'}
 
