@@ -7,8 +7,12 @@
 import sondehub
 import requests
 
+# The unique 8-digit Sonde identifier. Shown in the sondehub.org UI.
+SONDE_ID = "U1140595"
+
 API_SERVER = 'https://map.krakenrf.com:443'
 
+# Your Kraken Pro Cloud username and password
 login = {'username': 'username', 'password': 'password'}
 
 x = requests.post(API_SERVER + '/login', json = login)
@@ -25,7 +29,7 @@ def on_message(message):
     #print(message['alt'])
 
 # Set sondes to whatever active sonde you want
-test = sondehub.Stream(on_message=on_message, sondes=["U1140595"])
+test = sondehub.Stream(on_message=on_message, sondes=[SONDE_ID])
 
 while 1:
     pass
