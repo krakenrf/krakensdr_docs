@@ -1,3 +1,6 @@
+# Uploads ADS-B data from dump1090 to the Kraken Pro Mapping server.
+# Must run dump1090 with "--write-json" and have it write aircraft.json to the same directory as this script 
+# e.g. ~/dump1090/package-bullseye/dump1090 --interactive --write-json .
 
 import requests
 import json
@@ -12,10 +15,6 @@ x = requests.post(API_SERVER + '/login', json = login)
 token = x.text
 
 print(x.text)
-
-#beaconData = [{'id': "e80450", 'lat': -37.236809, 'lon': 171.337698, 'speed': 443, 'height': 37925, 'heading': 180},
-#              {'id': "e80460", 'lat': -37.036809, 'lon': 171.137698, 'speed': 443, 'height': 37925, 'heading': 180}]
-#x = requests.post(API_SERVER + '/beacons', json = beaconData, headers = {'Authorization': token})
 
 while True:
     f = open('aircraft.json')
