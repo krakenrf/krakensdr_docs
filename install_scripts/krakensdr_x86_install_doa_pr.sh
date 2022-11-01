@@ -86,7 +86,7 @@ conda install -y dash==1.20.0
 conda install -y werkzeug==2.0.2
 
 conda install -y "blas=*=mkl"
-conda install -y -c numba icc_rt
+conda install -y numba
 
 cd 
 
