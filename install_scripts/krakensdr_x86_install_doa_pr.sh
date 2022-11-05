@@ -74,6 +74,7 @@ conda install -y pandas
 conda install -y orjson
 conda install -y matplotlib
 conda install -y requests
+conda install -y scikit-image
 
 pip3 install dash_bootstrap_components==1.1.0
 pip3 install quart_compress==0.2.1
