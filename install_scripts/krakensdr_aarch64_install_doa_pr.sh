@@ -51,6 +51,7 @@ conda install -y numba
 conda install -y configparser
 conda install -y pyzmq
 conda install -y scikit-rf
+conda install -y scikit-image
 
 cd
 mkdir krakensdr_doa
