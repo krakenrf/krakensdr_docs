@@ -55,7 +55,6 @@ conda install -y scipy
 conda install -y numba
 conda install -y configparser
 conda install -y pyzmq
-conda install -y scikit-rf
 
 cd
 mkdir krakensdr_doa
@@ -75,6 +74,7 @@ conda install -y orjson
 conda install -y matplotlib
 conda install -y requests
 conda install -y scikit-image
+conda install -y scikit-rf
 
 pip3 install dash_bootstrap_components==1.1.0
 pip3 install quart_compress==0.2.1
