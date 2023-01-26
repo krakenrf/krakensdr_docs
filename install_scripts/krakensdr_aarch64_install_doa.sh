@@ -43,7 +43,7 @@ eval "$(conda shell.bash hook)"
 conda init bash
 conda config --set auto_activate_base false
 
-conda create -y -n kraken python=3.9.7
+conda create -y -n kraken python=3.10.8
 conda activate kraken
 
 conda install -y scipy==1.9.3
