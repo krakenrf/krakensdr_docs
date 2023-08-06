@@ -8,8 +8,8 @@ import time
 
 API_SERVER = 'https://kraken.tynet.eu:8842'
 
-# Your Kraken Pro Cloud username and password
-login = {'username': 'username', 'password': 'password'}
+# Your Kraken Pro Cloud username email and password
+login = {'email': 'email', 'password': 'password'}
 
 x = requests.post(API_SERVER + '/login', json = login)
 token = x.text
