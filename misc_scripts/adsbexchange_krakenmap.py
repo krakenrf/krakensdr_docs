@@ -29,7 +29,7 @@ headers = {
 
 
 # Your Kraken Pro Cloud username and password
-login = {'username': KRAKEN_PRO_USERNAME, 'password': KRAKEN_PRO_PASSWORD}
+login = {'email': KRAKEN_PRO_USER_EMAIL, 'password': KRAKEN_PRO_PASSWORD}
 
 x = requests.post(KRAKEN_RPO_API_SERVER + '/login', json = login)
 token = x.text
