@@ -8,7 +8,7 @@ gpsd.connect()
 time.sleep(2)
 
 API_SERVER = 'https://map.krakenrf.com:443'
-login = {'username': 'username', 'password': 'password'}
+login = {'email': 'email', 'password': 'password'}
 
 while(1):
     try:
