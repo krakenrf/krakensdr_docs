@@ -12,8 +12,8 @@ SONDE_ID = "U1140595"
 
 API_SERVER = 'https://map.krakenrf.com:443'
 
-# Your Kraken Pro Cloud username and password
-login = {'username': 'username', 'password': 'password'}
+# Your Kraken Pro Cloud username email and password
+login = {'email': 'email', 'password': 'password'}
 
 x = requests.post(API_SERVER + '/login', json = login)
 token = x.text
