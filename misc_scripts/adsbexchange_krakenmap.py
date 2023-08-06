@@ -4,7 +4,7 @@
 
 RAPID_API_KEY: "MY_RAPID_API_KEY"
 
-KRAKEN_PRO_USERNAME: "username"
+KRAKEN_PRO_USER_EMAIL: "your@email.com"
 KRAKEN_PRO_PASSWORD: "password"
 
 # You may wish to limit your request rate more to avoid going over the limit of your account
