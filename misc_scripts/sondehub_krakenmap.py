@@ -21,7 +21,7 @@ token = x.text
 #print(x.text)
 
 def on_message(message):
-    beaconData = {'id': str(message['serial']), 'lat': message['lat'], 'lon': message['lon'], 'speed': round(message['vel_h'] * 3.6), 'height': int(message['alt']), 'heading' : int(message['heading'])}
+    beaconData = {'id': str(message['serial']), 'lat': message['lat'], 'lon': message['lon'], 'speed': round(message['vel_h'] * 3.6), 'height': round(message['alt']), 'heading' : round(message['heading'])}
     x = requests.post(API_SERVER + '/beacon', json = beaconData, headers = {'Authorization': token})
     #print(x.text)
     #print(message['lat'])
