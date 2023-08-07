@@ -10,7 +10,7 @@ KRAKEN_PRO_PASSWORD: "password"
 # You may wish to limit your request rate more to avoid going over the limit of your account
 REQUEST_RATE = 10
 
-KRAKEN_RPO_API_SERVER = 'https://kraken.tynet.eu:8842'
+KRAKEN_RPO_API_SERVER = 'https://map.krakenrf.com'
 
 
 import requests
@@ -43,7 +43,7 @@ while run:
     beaconData = []
     for aircraft in data['ac']:
         try:
-            beaconData.append({'id': str(aircraft['flight']), 'lat': aircraft['lat'], 'lon': aircraft['lon'], 'speed': int(aircraft['gs']), 'height': aircraft['alt_geom'], 'heading': aircraft['track']})
+            beaconData.append({'id': str(aircraft['flight']), 'lat': aircraft['lat'], 'lon': aircraft['lon'], 'speed': round(aircraft['gs']), 'height': round(aircraft['alt_geom']), 'heading': round(aircraft['track'])})
 
             #print (aircraft['flight'])
             #print (aircraft['lat'])
