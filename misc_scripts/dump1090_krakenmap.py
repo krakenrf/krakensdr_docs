@@ -6,7 +6,7 @@ import requests
 import json
 import time
 
-API_SERVER = 'https://kraken.tynet.eu:8842'
+API_SERVER = 'https://map.krakenrf.com'
 
 # Your Kraken Pro Cloud username email and password
 login = {'email': 'email', 'password': 'password'}
@@ -23,7 +23,7 @@ while True:
     beaconData = []
     for aircraft in data['aircraft']:
         try:
-            beaconData.append({'id': str(aircraft['flight']), 'lat': aircraft['lat'], 'lon': aircraft['lon'], 'speed': int(aircraft['gs']), 'height': aircraft['alt_geom'], 'heading': aircraft['mag_heading']})
+            beaconData.append({'id': str(aircraft['flight']), 'lat': aircraft['lat'], 'lon': aircraft['lon'], 'speed': round(aircraft['gs']), 'height': round(aircraft['alt_geom']), 'heading': round(aircraft['mag_heading'])})
 
             #print (aircraft['flight'])
             #print (aircraft['lat'])
