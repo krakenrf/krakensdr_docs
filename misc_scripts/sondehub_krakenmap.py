@@ -10,7 +10,7 @@ import requests
 # The unique 8-digit Sonde identifier. Shown in the sondehub.org UI.
 SONDE_ID = "U1140595"
 
-API_SERVER = 'https://map.krakenrf.com:443'
+API_SERVER = 'https://map.krakenrf.com'
 
 # Your Kraken Pro Cloud username email and password
 login = {'email': 'email', 'password': 'password'}
@@ -21,7 +21,7 @@ token = x.text
 #print(x.text)
 
 def on_message(message):
-    beaconData = {'lat': message['lat'], 'lon': message['lon'], 'speed': 0, 'height': message['alt']}
+    beaconData = {'id': str(message['serial']), 'lat': message['lat'], 'lon': message['lon'], 'speed': round(message['vel_h'] * 3.6), 'height': int(message['alt']), 'heading' : int(message['heading'])}
     x = requests.post(API_SERVER + '/beacon', json = beaconData, headers = {'Authorization': token})
     #print(x.text)
     #print(message['lat'])
