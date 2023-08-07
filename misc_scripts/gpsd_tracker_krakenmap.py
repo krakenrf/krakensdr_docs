@@ -7,7 +7,7 @@ import requests
 gpsd.connect()
 time.sleep(2)
 
-API_SERVER = 'https://map.krakenrf.com:443'
+API_SERVER = 'https://map.krakenrf.com'
 login = {'email': 'email', 'password': 'password'}
 
 while(1):
@@ -27,7 +27,7 @@ while(1):
         print("lat: " + str(lat))
         print("lon: " + str(lon))
 
-        beaconData = {'lat': lat, 'lon': lon, 'speed': 0, 'height': 0}
+        beaconData = {'id': 'mygps', 'lat': lat, 'lon': lon, 'speed': 0, 'height': 0, 'heading': 0}
         x = requests.post(API_SERVER + '/beacon', json = beaconData, headers = {'Authorization': token})
 
     except (gpsd.NoFixError, UserWarning):
