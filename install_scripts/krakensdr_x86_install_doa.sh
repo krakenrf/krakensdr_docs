@@ -55,6 +55,7 @@ conda install -y scipy==1.9.3
 conda install -y numba==0.56.4
 conda install -y configparser
 conda install -y pyzmq
+conda install -y gitpython
 
 cd
 mkdir krakensdr_doa
