@@ -97,3 +97,6 @@ cd ~/krakensdr_doa
 git clone https://github.com/krakenrf/krakensdr_doa
 cp krakensdr_doa/util/kraken_doa_start.sh .
 cp krakensdr_doa/util/kraken_doa_stop.sh .
+
+# OPTIONAL: Install Kraken TAK Server
+git clone https://github.com/canaryradio/Kraken-to-TAK-Python
