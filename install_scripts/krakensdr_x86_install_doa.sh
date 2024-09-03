@@ -14,6 +14,7 @@ done &
 sudo apt update
 sudo apt -y install build-essential git cmake libusb-1.0-0-dev lsof libzmq3-dev clang php-cli nodejs gpsd libfftw3-bin libfftw3-dev
 
+cd
 git clone https://github.com/krakenrf/librtlsdr
 cd librtlsdr
 sudo cp rtl-sdr.rules /etc/udev/rules.d/rtl-sdr.rules
