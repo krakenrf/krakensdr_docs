@@ -87,6 +87,7 @@ pip3 install gpsd-py3
 
 conda install -y dash==1.20.0
 conda install -y werkzeug==2.0.2
+conda install -y plotly==5.23.0
 
 conda install -y "blas=*=mkl"
 conda install -y numba==0.56.4
